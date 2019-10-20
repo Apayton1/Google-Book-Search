@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 app.use(routes);
 // CONNECT TO MONGODB
@@ -34,12 +34,12 @@ app.use(routes);
 // mongoose.connect(MONGODB_URI);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
-//   {
-//     useCreateIndex: true, 
-//     useNewUrlParser: true
-//   }
-
+  process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+  {
+    useCreateIndex: true, 
+    useNewUrlParser: true
+  }
+);
 
 
 
