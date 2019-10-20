@@ -8,7 +8,7 @@ mongoose.connect(
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
-    family: 4 // Use IPv4, skip trying IPv6
+    family: 4 
   }
 );
 
